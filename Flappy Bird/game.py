@@ -7,7 +7,7 @@ pygame.font.init()
 
 # Setting game dimensions
 GAME_HEIGHT = 800
-GAME_WIDTH = 600
+GAME_WIDTH = 500
 
 # Loading images
 BIRD = [pygame.transform.scale2x(pygame.image.load(os.path.join("images", "bird1.png"))), pygame.transform.scale2x(pygame.image.load(os.path.join("images", "bird2.png"))), pygame.transform.scale2x(pygame.image.load(os.path.join("images", "bird3.png")))]
@@ -87,7 +87,7 @@ class Bird:
 
 
 class Pipe:
-    GAP = 200
+    GAP = random.randrange(180, 250)
     VELOCITY = 5
 
     def __init__(self, x):
@@ -101,7 +101,7 @@ class Pipe:
         self.set_height()
 
     def set_height(self):
-        self.height = random.randrange(50, 450)
+        self.height = random.randrange(50, 400)
         self.top = self.height - self.PIPE_TOP.get_height()
         self.bottom = self.height + self.GAP
 
@@ -188,7 +188,7 @@ def main(genomes, config):
         ge.append(g)
 
     base = Base(730)
-    pipes = [Pipe(500)]
+    pipes = [Pipe(random.randrange(450, 600))]
     win = pygame.display.set_mode((GAME_WIDTH, GAME_HEIGHT))
     clock = pygame.time.Clock()
     run = True
@@ -240,7 +240,7 @@ def main(genomes, config):
             score += 1
             for g in ge:
                 g.fitness += 5
-            pipes.append(Pipe(600))
+            pipes.append(Pipe(random.randrange(450, 600)))
 
         for r in rem:
             pipes.remove(r)
