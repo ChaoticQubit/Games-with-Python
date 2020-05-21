@@ -87,7 +87,7 @@ class Bird:
 
 
 class Pipe:
-    GAP = random.randrange(180, 250)
+    GAP = random.randrange(150, 250)
     VELOCITY = 5
 
     def __init__(self, x):
@@ -101,7 +101,7 @@ class Pipe:
         self.set_height()
 
     def set_height(self):
-        self.height = random.randrange(50, 400)
+        self.height = random.randrange(100, 300)
         self.top = self.height - self.PIPE_TOP.get_height()
         self.bottom = self.height + self.GAP
 
@@ -193,7 +193,7 @@ def main(genomes, config):
     clock = pygame.time.Clock()
     run = True
     while run:
-        clock.tick(500000)
+        clock.tick(50000000)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
