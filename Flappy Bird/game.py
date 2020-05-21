@@ -13,7 +13,7 @@ GAME_WIDTH = 600
 BIRD = [pygame.transform.scale2x(pygame.image.load(os.path.join("images", "bird1.png"))), pygame.transform.scale2x(pygame.image.load(os.path.join("images", "bird2.png"))), pygame.transform.scale2x(pygame.image.load(os.path.join("images", "bird3.png")))]
 PIPE = pygame.transform.scale2x(pygame.image.load(os.path.join("images", "pipe.png")))
 GROUND = pygame.transform.scale2x(pygame.image.load(os.path.join("images", "base.png")))
-BACKGROUND = pygame.transform.scale2x(pygame.image.load(os.path.join("images", "bg.jpg")))
+BACKGROUND = pygame.transform.scale2x(pygame.image.load(os.path.join("images", "bg.png")))
 
 TEXT_FONT = pygame.font.SysFont("comicsans", 50)
 GEN = 0
